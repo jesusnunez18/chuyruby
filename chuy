@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+class Mates 
+
+	#suma dos numeros
+	def suma (x,y)
+		puts "el resultado de: #{x} + #{y} = #{x+y}"
+		return x + y
+	end
+
+
+	#restar
+	def resta (x,y)
+		puts "el resultado de: #{x} - #{y} = #{x-y}"
+		return x - y
+	end
+
+
+
+	#multiplicar
+	def multiplicar (x,y)
+		puts "el resultado de: #{x} * #{y} = #{x*y}"
+		return x * y
+	end
+
+	#dividir
+	def dividir (x,y)
+		puts "el resultado de #{x} / #{y} = #{x/y}"
+		return x / y
+	end
+
+	def formulageneral(x,y,z)
+	a = 0
+
+	a = (-y + CMath.sqrt(y**2-4*x*z))/2*x
+	puts "el resultado de la chicharronera es #{a}"
+	return a
+
+
+	end
+
+
+end
+
+
+
+#utulizar cmath para la formula general
+require 'cmath'
+#instanciar clase
+calculadora = Mates.new
+
+#z = 0
+
+case ARGV[0]
+
+when "suma"
+	calculadora.suma(ARGV[1].to_i,ARGV[2].to_i)
+
+when "resta"
+	 calculadora.resta(ARGV[1].to_i,ARGV[2].to_i)
+
+when "multiplicar"
+	 calculadora.multiplicar(ARGV[1].to_i,ARGV[2].to_i)
+
+when "dividir"
+	 calculadora.dividir(ARGV[1].to_f,ARGV[2].to_f)
+
+when "formulageneral"
+	calculadora.formulageneral(ARGV[1].to_f,ARGV[2].to_f,ARGV[3].to_f)
+
+
+
+
+end
+
+
